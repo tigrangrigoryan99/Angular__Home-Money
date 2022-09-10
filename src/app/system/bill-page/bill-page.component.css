@@ -1,0 +1,50 @@
+.bill-body {
+
+}
+.title-block {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    margin: 40px 40px 30px 40px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px gray solid;
+}
+.title {
+    font-size: 25px;
+    color: rgb(170, 167, 167);
+    margin: 0;
+    padding: 0;
+}
+.pull-right {
+
+}
+.refr-buton {
+    width: 50px;
+    height: 30px;
+    border: 1.5px gray solid;
+    background-color: white;
+}
+.refr-buton:hover {
+    border: 1.5px rgb(20, 7, 7) solid;
+    background-color: rgb(206, 208, 235);
+}
+.section {
+    margin: 0 40px 0 40px ;
+}
+.row {
+    display: flex;
+}
+.bolck-left {
+    flex: 40%;
+    margin-right: 30px;
+}
+.block-right {
+    flex: 60%;
+}
+.loaded {
+    text-align: center;
+    color: rgb(196, 190, 190);
+    font-size: 28px;
+    font-weight: 400;
+}

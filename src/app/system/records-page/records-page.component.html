@@ -1,0 +1,23 @@
+<div class="records-body">
+    <div class="title-block">
+        <h3 class="title">Страница записей</h3>
+    </div> 
+    <div class="section">
+        <div class="loaded" *ngIf="!isLoadded; else row">
+            Loadding...
+        </div>
+        <ng-template #row>
+            <div class="row">
+                <div class="bolck-left">
+                    <wfm-addevent [categories]="categories"></wfm-addevent>
+                </div>
+                <div class="block-center">
+                    <wfm-editcategory [categories]="categories" (onCategoryEdit)="onEditCategory($event)"></wfm-editcategory>
+                </div>
+                <div class="block-right">
+                    <wfm-addcategory (onCategoryAdd)="onAddCategory($event)"></wfm-addcategory>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

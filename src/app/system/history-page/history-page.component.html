@@ -1,0 +1,14 @@
+<div class="history__body">
+    <div class="history__block">
+        <h3 class="history__title title">Страница счёта</h3>
+    </div> 
+    <div class="loaded" *ngIf="!isLoaded; else history">
+        Loadding...
+    </div>
+    <ng-template #history>
+        <div class="history__pages">
+            <wfm-historychart [data]="charData"></wfm-historychart>
+            <wfm-historyevents [dataEvt]="dataEvents" [dataCat]="dataCategories"></wfm-historyevents>
+        </div>
+    </ng-template>
+</div>

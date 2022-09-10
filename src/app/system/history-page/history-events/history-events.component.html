@@ -1,0 +1,61 @@
+<section class="section">
+    <div class="section__rows">
+        <div class="section__card">
+            <div class="search__columns">
+                <div class="item-header">
+                    <h4 class="item-header__title">Список событий</h4>
+                </div>
+                <div class="search__options">
+                    <div class="item-search">
+                        <input type="text" 
+                            [placeholder]="searchPlaceholder" 
+                            [(ngModel)]="searchValue"
+                            class="search">
+                    </div>
+                    <div class="item-option" dropdown>
+                        <button type="button" class="btndropdown">Параметр
+                             <img width="13px" heigth="13px" src="../../../../assets/img/arrow.png" alt="arrow">
+                        </button>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" (click)="getPlaceholderName('amount')">Сумма</a>
+                            <a class="dropdown-item" (click)="getPlaceholderName('date')">Дата</a>
+                            <a class="dropdown-item" (click)="getPlaceholderName('category')">Категория</a>
+                            <a class="dropdown-item" (click)="getPlaceholderName('type')">Тип</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section__card-block">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Сумма</th>
+                        <th>Дата</th>
+                        <th>Категория</th>
+                        <th>Тип</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let evt of dataEvt | filter : searchValue : searchField; let ind = index">
+                        <th>{{ ind+1 }}</th>
+                        <td>{{ evt.amount | number: '1.2' }}</td>
+                        <td>{{ evt.date | moment: "DD.MM.YYYY hh:mm:ss" }}</td>
+                        <td>{{ evt.catName }}</td>
+                        <td>
+                            <span [ngClass]="getEventClass(evt)">
+                                <span *ngIf="evt.type === 'outcome'">Расход</span>
+                                <span *ngIf="evt.type === 'income'">Доход</span>
+                            </span>
+                        </td>
+                        <td>
+                            <a [routerLink]="['/system/history', evt.id]" class="btn__style">Открыть</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

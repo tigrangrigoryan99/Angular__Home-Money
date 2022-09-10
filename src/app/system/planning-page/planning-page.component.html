@@ -1,0 +1,75 @@
+<div class="planning-body">
+    <div class="planning__header">
+        <h3 class="planning__title title">Страница планирования</h3>
+    </div> 
+    <div class="loaded" *ngIf="!isLoaded; else section">
+        Loadding...
+    </div>
+    <ng-template #section>     
+    <div class="plannine__section">
+        <div class="planning__row planning__row_header">
+            <div class="item-header">
+                <h5 class="item-header__title">Расходы</h5>
+                <div class="item-header__text">Общий остаток: <span>{{ bill.value| number:"1.2" }} {{ bill.currency}}</span></div>
+            </div>
+        </div>
+        <div class="planning__row planning__row_content">
+            <div class="item-content">
+                <div class="item-content__row" *ngFor="let c of categories">
+                    <div class="item-content__category">
+                        <div class="item-content__background">
+                            <div class="item-content__progress {{ getCatColorClass(c) }}" [ngStyle]="{'width': getCatPercent(c)}">
+                                <span style="padding: 8px;display: inline-block;">{{c.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content__category">
+                        <p>
+                            <span style="color: rgb(241, 55, 55);"> {{ getCategoryCost(c) | number: '1.2'}} </span>
+                            из
+                            <span style="color: rgb(82, 60, 163);"> {{c.capacity | number: '1.2'}} </span>
+                            |
+                            осталось
+                            <span style="color: rgb(24, 180, 24);"> {{c.capacity - getCategoryCost(c) | number: '1.2'}} </span> (руб.)
+                        </p>
+                    </div>
+                </div>
+                <!-- <div class="item-content__row">
+                    <div class="item-content__category">
+                        <div class="item-content__progress">
+                            <span>Название категории</span>
+                        </div>
+                    </div>
+                    <div class="item-content__amount">
+                        <p>
+                            <span>300</span>
+                            из
+                            <span>100000</span>
+                            |
+                            осталось
+                            <span>700</span>(руб.)
+                        </p>
+                    </div>
+                </div>
+                <div class="item-content__row">
+                    <div class="item-content__category">
+                        <div class="item-content__progress">
+                            <span>Название категории</span>
+                        </div>
+                    </div>
+                    <div class="item-content__amount">
+                        <p>
+                            <span>300</span>
+                            из
+                            <span>100000</span>
+                            |
+                            осталось
+                            <span>700</span>(руб.)
+                        </p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    </ng-template>
+</div>

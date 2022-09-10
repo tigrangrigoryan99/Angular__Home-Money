@@ -1,0 +1,79 @@
+.article {
+    height: 800px;
+    overflow-y: auto;
+    margin: 40px 30px 0 40px;
+}
+.header__block{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1.5px gray solid;
+    margin-bottom: 30px;
+}
+.header__title{
+    font-size: 25px;
+    color: rgb(170, 167, 167);
+    margin: 0;
+    padding: 0;
+}
+.section {
+    
+}
+.section__columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-income {
+    background-color: rgb(230, 236, 238);
+    width: 500px;
+    margin-bottom: 40px;
+}
+.item__outcome {
+    background-color: rgb(230, 236, 238);
+    width: 500px;
+}
+.item-income__header {
+    background-color: rgb(31, 145, 31);
+    padding: 20px;
+}
+.title {
+  font-weight: bold;
+}
+.item-income__list{
+    padding: 20px;
+}
+.list {
+
+}
+.item-income__date {
+    border-top: 2px white solid;
+    padding: 20px;
+}
+.date {
+
+}
+.item__outcome__header {
+    padding: 20px;
+}
+.item__outcome__list {
+    padding: 20px;
+}
+.item__outcome__date {
+    border-top: 2px white solid;
+    padding: 20px;
+}
+.loaded {
+    text-align: center;
+    color: rgb(196, 190, 190);
+    font-size: 28px;
+    font-weight: 400px;
+}
+.item-success .item-income__header {
+    background-color: rgb(25, 179, 33);
+}
+.item-danger .item-income__header{
+    background-color: rgb(233, 53, 53);
+}

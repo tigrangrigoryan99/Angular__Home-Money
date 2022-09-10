@@ -1,0 +1,31 @@
+.block-left {
+    background-color: rgb(230, 236, 238);
+}
+.left-content {
+    padding: 20px 20px 40px 20px;
+} 
+.content {
+
+}
+.content-header {
+    margin: 10px 10px 10px 0;
+}
+.header {
+    margin: 0;
+    padding: 7px;
+    font-size: 22px;
+    color: rgb(117, 117, 117);
+}
+.content-columns {
+
+}
+.column {
+    padding: 13px 13px 13px 0;
+    border-bottom: 2px black solid;
+}
+.column:hover {
+    background-color:  rgb(207, 209, 209);
+}
+.column-cont {  
+    margin: 12px 0 12px 12px ;
+}

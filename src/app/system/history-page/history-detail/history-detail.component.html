@@ -1,0 +1,38 @@
+<article class="article">
+    <div class="header__block">
+         <a [routerLink]="['/system/history']" style="padding: 5px 10px 0 0 ;">
+            <img [src]="srcImg" alt="arrowleft" width="25px" height="25px" (mouseenter)="changeSrc(true)" (mouseleave)="changeSrc(false)">
+         </a>
+         <!-- <div *ngIf="dataEvents"> -->
+            <h3 class="header__title">Страница записи N {{dataEvents.id}}</h3>
+         <!-- </div> -->
+    </div>
+    <section class="section">  
+        <div class="loaded" *ngIf="!isLoaded; else col">Loading...</div>
+        <ng-template #col>
+            <div class="section__columns">
+                <div class="item-income" [ngClass]="{'item-success': dataEvents.type === 'income',
+                                                     'item-danger': dataEvents.type === 'outcome'}">
+                    <div class="item-income__header">
+                        <div class="title">
+                            <span *ngIf="dataEvents.type === 'income'">Доход</span>
+                            <span *ngIf="dataEvents.type === 'outcome'">Расход</span>
+                        </div>
+                    </div>
+                    <div class="item-income__list">
+                        <ul class="list">
+                            <li>Сумма: <strong> {{dataEvents.amount | number: '1.2'}}  р.</strong></li>
+                            <li>Категория: <strong> {{dataCategories.name}}</strong></li>
+                            <li>Комментарий: <Strong>{{dataEvents.description}}</Strong></li>
+                        </ul>
+                    </div>
+                    <div class="item-income__date">
+                        <div class="date">
+                            {{dataEvents.date | moment: 'DD.MM.YYYY hh:mm:ss'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        </section>
+</article>

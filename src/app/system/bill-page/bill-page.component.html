@@ -1,0 +1,25 @@
+<div class="bill-body">
+    <div class="title-block">
+        <h3 class="title">Страница Счёта</h3>
+        <div class="pull-right">
+            <button type="button" class="refr-buton" (click)="onRefresh()">
+                <img src="../../../assets/img/refresh.png" alt="refresh" width="15px" height="15px">
+            </button>
+        </div>
+    </div>   
+    <div class="section">
+        <div class="loaded" *ngIf="!isLoaded; else row">
+            Loadding ...
+        </div>
+        <ng-template #row>
+            <div class="row">
+                <div class="bolck-left">
+                    <wfm-billcard [bill]="bill" [currency]="currency"></wfm-billcard>
+                </div>
+                <div class="block-right">
+                    <wfm-currencycard [currency]="currency"></wfm-currencycard>
+                </div>
+            </div>
+       </ng-template>
+    </div> 
+</div>

@@ -1,0 +1,27 @@
+<div class="block-left">
+    <div class="left-content content">
+        <div class="content-header">
+            <h4 class="header">Счёт</h4>
+        </div>
+        <div class="content-columns">
+            <div class="column">
+                <div class="column-cont">
+                    <img src="../../../assets/img/dollar.png" alt="dollar" width="15px" height="15px" style="margin-right: 10px;">
+                    <span> {{bill.value | number: '1.2'}} </span>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-cont">
+                    <img src="../../../assets/img/euro.png" alt="euro" width="15px" height="15px" style="margin-right: 10px;">
+                    <span>{{dollar | number: '1.2'}}</span>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-cont">
+                    <img src="../../../assets/img/rubli.png" alt="rubli" width="15px" height="15px" style="margin-right: 10px;">
+                    <span>{{euro | number: '1.2'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

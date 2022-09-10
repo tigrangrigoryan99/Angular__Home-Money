@@ -1,0 +1,73 @@
+.records-body {
+    height: 800px;
+    overflow-y: auto;
+    margin: 40px 40px 0 40px;
+    overflow-x: hidden; 
+}
+.title-block {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1.5px gray solid;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 25px;
+    color: rgb(170, 167, 167);
+    margin: 0;
+    padding: 0;
+}
+.section {
+    margin-top: 40px;
+    padding: 0 10px;
+}
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
+.bolck-left {
+    flex: 33.3%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.block-center {
+    flex: 33.3%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.block-right {
+    flex: 33.3%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.loaded {
+    text-align: center;
+    color: rgb(196, 190, 190);
+    font-size: 28px;
+    font-weight: 400;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-button {
+    /* border: 1px black solid ; */
+}
+::-webkit-scrollbar-corner {
+    /* border: 2px red solid; */
+}
+::-webkit-scrollbar-thumb {
+    border: 2px rgb(15, 15, 15) solid;
+    border-radius: 10px;
+    height: 10px;
+    background-color: rgb(173, 170, 170);
+}
+::-webkit-scrollbar-track {
+    /* border: 2px yellow solid; */
+}
+::-webkit-scrollbar-track-piece {
+    /* border: 2px gray solid; */
+}
+

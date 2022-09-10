@@ -1,0 +1,46 @@
+<div class="block-right">
+    <div class="right-content content">
+        <div class="content-header">
+            <h4 class="header">Добавить категорию</h4>
+        </div>
+        <div class="content-form"
+        [ngClass]="{'has-error': form.invalid && form.touched}">
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <div class="form-group">
+                    <label for="name" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите название</label><br>
+                    <input type="text" 
+                        autocomplete="off"
+                        id="name"
+                        class="form-control border-style"
+                        ngModel
+                        name="name"
+                        #name="ngModel"
+                        required
+                        >
+                    <span *ngIf="name.invalid && name.touched" style="color: red; font-size: 11px;">Название категории не может быть пустым!</span>
+                </div>
+                <div class="form-group">
+                    <label for="capacity" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите лимит</label><br>
+                    <input type="number" 
+                        autocomplete="off" 
+                        id="capacity" 
+                        name="capacity"
+                        placeholder="0"
+                        min="1"
+                        class="form-control border-style" 
+                        ngModel
+                        name="capacity"
+                        #capacity="ngModel"
+                        required=""
+                        >
+                    <span *ngIf="capacity.invalid && capacity.touched" style="color: red; font-size: 11px;">Поле не может быть пустым!</span>
+                </div>
+                <div class="form-group">
+                    <div class="button-center">
+                        <button [disabled]="form.invalid" type="submit" class="style-button">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

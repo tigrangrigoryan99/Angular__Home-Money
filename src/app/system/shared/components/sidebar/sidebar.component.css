@@ -1,0 +1,47 @@
+.sidebar {
+    background-color: #2e3f63;
+    height: 100%;
+}
+.sidebar-container {
+    /* padding: 5px; */
+}
+.header-block {
+    position: relative;
+    height: 100px;
+}
+.brand {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+.menu {
+
+}
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav a {
+    display: block;
+    color: gray;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.active a {
+    background-color: #3c91cf;
+    color: white;
+  }
+  
+.nav li a:hover:not(.active) {
+    background-color: #3c91cf;
+    color: white;
+}
+.img-style {
+    width: 15px;
+    height: 15px;
+}

@@ -1,0 +1,22 @@
+/* System header */
+.system {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.system-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    flex: 80%;
+}
+.menu {
+    flex: 20%;
+}
+
+
+

@@ -1,0 +1,59 @@
+<div class="block-center">
+    <div class="center-content content">
+        <div *ngIf="newMessage" class="success">Категория уцпешно отредактирована!</div>
+        <div class="content-header">
+            <h4 class="header">Редактировать категорию</h4>
+        </div>
+        <div class="content-form"
+            [ngClass]="{'has-error': form.invalid && form.touched}">
+            <form #form = "ngForm" (ngSubmit)="onSubmit(form)">
+                <div class="form-group">
+                    <label for="select-categori" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите категорию</label>
+                    <select name="categori" 
+                        id="select-categori"
+                        class="form-control border-style"
+                        [(ngModel)]="categoriId"
+                        (change)="onCategoryChange()"
+                        #select="ngModel"
+                        name="categori">
+                        <option *ngFor="let c of categories"
+                            [value]="c.id">
+                            {{ c.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите название</label><br>
+                    <input type="text" 
+                        autocomplete="off"
+                        id="name"
+                        class="form-control border-style"
+                        [ngModel]="currentCategori.name"
+                        #name="ngModel"
+                        name="name"
+                        required>
+                    <span *ngIf="name.invalid && name.touched" style="color: red; font-size: 11px;">Название категории не может быть пустым!</span>
+                </div>
+                <div class="form-group">
+                    <label for="capacity" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите лимит</label><br>
+                    <input type="number" 
+                        autocomplete="off"
+                        id="capacity" 
+                        [min]="1"
+                        placeholder="0"
+                        class="form-control border-style"
+                        [ngModel]="currentCategori.capacity"
+                        #capacity="ngModel"
+                        name="capacity"
+                        required="">
+                    <span *ngIf="capacity.invalid && capacity.touched" style="color: red; font-size: 11px;">Поле не может быть пустым!</span>
+                </div>
+                <div class="form-group">
+                    <div class="button-center">
+                        <button [disabled]="form.invalid" type="submit" class="style-button">Изменить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

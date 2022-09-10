@@ -1,0 +1,30 @@
+.auth {
+   background-color: #cdd4ce;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+}
+.auth-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.auth-header {
+    text-align: center;
+    border-bottom: 2px #cdd4ce solid;
+}
+
+.auth-title {
+    color: grey;
+    margin: 25px;
+}
+

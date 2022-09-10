@@ -1,0 +1,83 @@
+<div class="block-left">
+    <div class="left-content content">
+        <div *ngIf="newMessage" class="danger">На Счёту не достаточно средств.Вам не хватает {{ valueBill }}!</div>
+        <div class="content-header">
+            <h4 class="header">Добавить событие</h4>
+        </div>
+        <div class="content-form"
+            [ngClass]="{'has-error': form.invalid && form.touched}">
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <div class="form-group">
+                    <label for="category" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите категорию</label><br>
+                    <select id="category"
+                        class="form-control border-style"
+                        [ngModel]="1"
+                        #category="ngModel"
+                        name="category"
+                        required>
+                        <option *ngFor="let c of categories"
+                            [value]="c.id">
+                            {{ c.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="radios-options" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите тип</label>
+                    <div class="form-control">
+                        <div *ngFor="let t of types" class="m-bottom-input">
+                            <input type="radio"
+                            [ngModel]="'outcome'" 
+                            #income="ngModel"
+                            [value]="t.types"
+                            name="type"
+                            required>
+                            <label for="income">{{ t.label }}</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" style="font-weight: bold; color: rgb(49, 48, 48);">Вверите сумму</label><br>
+                    <input type="number"
+                        id="amount"
+                        placeholder="0"
+                        class="form-control border-style"
+                        [ngModel]="500"
+                        #amount="ngModel"
+                        name="amount"
+                        required> 
+                        <span *ngIf="amount.invalid && amount.touched" style="color: red; font-size: 11px;">Поле не может быть пустым!</span>
+                </div>
+                <div class="form-group">
+                    <label for="description" style="font-weight: bold; color: rgb(49, 48, 48);">Введите описание</label><br>
+                    <input type="text"
+                        id="description"
+                        class="form-control border-style"
+                        [ngModel]="'Купил посудамоечную машину'"
+                        #description="ngModel"
+                        name="description"
+                        required> 
+                        <span *ngIf="description.invalid && description.touched" style="color: red; font-size: 11px;">Поле не может быть пустым!</span>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="amount" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите дату</label><br>
+                    <input type="number"
+                        id="amount"
+                        placeholder="0"
+                        class="form-control border-style"
+                        ngModel
+                        #amount="ngModel"
+                        name="amount"
+                        required> 
+                        <span *ngIf="amount.invalid && amount.touched" style="color: red; font-size: 11px;">Поле не может быть пустым!</span>
+                </div> -->
+                <div class="form-group">
+                    <div class="button-center">
+                        <button type="submit" 
+                            class="style-button"
+                            [disabled]="form.invalid">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
