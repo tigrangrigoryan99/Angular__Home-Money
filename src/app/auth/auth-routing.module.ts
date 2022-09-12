@@ -19,4 +19,6 @@ const authRoutes: Routes = [
     providers: []
 })
 
-export class AuthRoutingModule {}
+export class AuthRoutingModule {
+    
+}
