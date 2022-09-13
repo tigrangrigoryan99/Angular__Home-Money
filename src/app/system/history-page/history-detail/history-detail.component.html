@@ -3,9 +3,7 @@
          <a [routerLink]="['/system/history']" style="padding: 5px 10px 0 0 ;">
             <img [src]="srcImg" alt="arrowleft" width="25px" height="25px" (mouseenter)="changeSrc(true)" (mouseleave)="changeSrc(false)">
          </a>
-         <!-- <div *ngIf="dataEvents"> -->
             <h3 class="header__title">Страница записи N {{dataEvents.id}}</h3>
-         <!-- </div> -->
     </div>
     <section class="section">  
         <div class="loaded" *ngIf="!isLoaded; else col">Loading...</div>

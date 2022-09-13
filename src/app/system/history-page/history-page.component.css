@@ -6,6 +6,7 @@
 .history__block {
     display: flex;
     justify-items: center;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
     border-bottom: 1.5px gray solid;
@@ -48,4 +49,16 @@
     font-weight: 400px;
     margin-top: 40px;
 
+}
+.pull-right {
+
+}
+.filter-buton {
+    padding: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+.history__pages {
+    position: relative;
 }

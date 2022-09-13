@@ -1,0 +1,86 @@
+.section {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    z-index: 50;
+    width: 600px;
+    /* display: none; */
+}
+.section .in {
+    display: block;
+}
+.section__modal {
+    border: 2px black solid;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    max-width: 600px;
+    height: 100%;
+}
+.modal-item {
+
+}
+.modal-item__header {
+    background-color: rgb(54, 148, 235);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+}
+.title {
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.close {
+    color: rgb(63, 63, 63);
+    font-size: 22px;
+    cursor: pointer;
+}
+.modal-item__form {
+    padding: 20px;
+}
+.form {
+
+}
+.form-group {
+    padding: 15px 0;
+}
+.form-group:last-child {
+    border-top: 1px black solid;
+}
+.option {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: flex-end;
+}
+.btn-reset {
+    margin-right: 10px;
+    background-color: white;
+    color: rgb(3, 3, 3);
+    font-weight: 600;
+    font-size: 17px;
+    padding: 10px;
+    border: 1px black solid;
+    cursor: pointer;
+}
+.btn-submit {
+    margin-right: 10px;
+    background-color: rgb(16, 159, 224);
+    padding: 10px;
+    border: 1px black solid;
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}

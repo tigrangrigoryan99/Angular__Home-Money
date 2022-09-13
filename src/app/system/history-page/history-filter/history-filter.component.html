@@ -1,0 +1,53 @@
+<section class="section in">
+    <div class="section__modal">
+        <div class="modal-item">
+            <div class="modal-item__header">
+                <h4 class="title">Фильтр</h4>
+                <div class="close" (click)="closeFilter()">x</div>
+            </div>
+            <div class="modal-item__form">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="type" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите период</label><br>
+                        <select name="type" 
+                                id="type" 
+                                class="option"
+                                [(ngModel)]="selectedPeriod">
+                            <option *ngFor="let tp of timePeriods" [value]="tp.type">
+                                {{tp.label}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="event" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите тип события</label><br>
+                        <label  *ngFor="let te of typeEvents">
+                            <input type="checkbox" 
+                                id="event" 
+                                class="form-item"
+                                [value]="te.type"
+                                (change)="handleChangeType($event.target)">
+                                <span>{{te.label}}</span><br>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="category" style="font-weight: bold; color: rgb(49, 48, 48);">Выберите категории</label><br>
+                        <label *ngFor="let cat of categories">
+                            <input type="checkbox" 
+                                   id="category" 
+                                   class="form-item"
+                                   [value]="cat.id"
+                                   (change)="handelChangeCat($event.target)">
+                                   <span>{{cat.name}}</span><br>
+                        </label>
+                    </div>
+                    <div class="form-group top-border">
+                        <div class="btn-group">
+                            <button type="reset" class="btn-reset" (click)="closeFilter()">Отмена</button>
+                            <button type="submit" class="btn-submit" (click)="onFilterApply()">Применить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

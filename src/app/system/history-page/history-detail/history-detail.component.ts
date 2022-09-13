@@ -27,7 +27,6 @@ export class HistoryDetailComponent implements OnInit, OnDestroy{
                 private categoriesService: CategoriesService) {
     }
 
-    // Davoyin harcnel
     ngOnInit(): void {
         this.sub = this.route.params
             .pipe(mergeMap((params: Params)=> {return this.eventsService.getEventsById(params['id'])}),
@@ -41,9 +40,7 @@ export class HistoryDetailComponent implements OnInit, OnDestroy{
                 this.isLoaded = true;
                 this.dataCategories = dataCat;                 
         });  
-        this.srcImg = "../../../../assets/img/arrowleft.png";
-
-        
+        this.srcImg = "../../../../assets/img/arrowleft.png";  
     }
 
     public changeSrc(mouseMov: boolean): void {   

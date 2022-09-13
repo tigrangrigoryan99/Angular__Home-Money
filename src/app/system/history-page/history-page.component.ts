@@ -17,12 +17,12 @@ export class HistoryComponent implements OnInit, OnDestroy{
     private sub1!: Subscription;
     public dataCategories: Categories[] = [];
     public dataEvents: EventModel[] = [];
-    isLoaded: boolean = false;
-
+    public isLoaded: boolean = false;
     public charData: Array<{name: string, value: number}> = [];
+    public isFilterVisible: boolean = true;
 
     constructor( private categoriesService: CategoriesService,
-                 private eventsService: EventService) {
+                 private eventsService: EventService ) {
 
     }
 
@@ -46,6 +46,22 @@ export class HistoryComponent implements OnInit, OnDestroy{
                      })
                 })
         })
+    }
+
+    private toggleFilterVisibility(dir: boolean): void {
+        this.isFilterVisible = dir;
+    }
+
+    public onRefresh() {
+        this.toggleFilterVisibility(true);
+    }
+
+    onFilterCancel() {
+        this.toggleFilterVisibility(false);
+    }
+
+    onFilterApply(filterData: {types: [],categories: Categories[], period: string}) {
+        console.log(filterData);  
     }
 
     ngOnDestroy(): void {

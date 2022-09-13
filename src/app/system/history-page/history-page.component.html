@@ -1,6 +1,11 @@
 <div class="history__body">
     <div class="history__block">
         <h3 class="history__title title">Страница счёта</h3>
+        <div class="pull-right">
+            <button type="button" class="filter-buton" (click)="onRefresh()">
+                <img src="../../../assets/img/filter.png" alt="filter" width="25px" height="25px">
+            </button>
+        </div>
     </div> 
     <div class="loaded" *ngIf="!isLoaded; else history">
         Loadding...
@@ -9,6 +14,13 @@
         <div class="history__pages">
             <wfm-historychart [data]="charData"></wfm-historychart>
             <wfm-historyevents [dataEvt]="dataEvents" [dataCat]="dataCategories"></wfm-historyevents>
+            <div *ngIf="isFilterVisible">
+                <wfm-historyfilter
+                    (onFilterCancel)="onFilterCancel()"
+                    (onFilterApply)="onFilterApply($event)"
+                    [dataCat]="dataCategories"
+                ></wfm-historyfilter>
+            </div>
         </div>
     </ng-template>
 </div>
