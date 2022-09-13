@@ -40,8 +40,7 @@ export class HIstoryFilterComponent {
             arr.indexOf(value) === -1 ? arr.push(value) : null;               
         } else {
             arr = arr.filter((i: any) => {return i !== value});
-        }
-       
+        }  
     }
 
     handleChangeType(target: any) {

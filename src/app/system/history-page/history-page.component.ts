@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { combineLatest, delay, Subscription } from "rxjs";
-import { LoginComponent } from "src/app/auth/login/login.component";
 
 import { Categories } from "../shared/models/categories.model";
 import { EventModel } from "../shared/models/event.model";
@@ -19,10 +18,11 @@ export class HistoryComponent implements OnInit, OnDestroy{
     public dataEvents: EventModel[] = [];
     public isLoaded: boolean = false;
     public charData: Array<{name: string, value: number}> = [];
-    public isFilterVisible: boolean = true;
+    public isFilterVisible: boolean = false;
+    public displayBlock: boolean = false;
 
     constructor( private categoriesService: CategoriesService,
-                 private eventsService: EventService ) {
+                 private eventsService: EventService) {
 
     }
 
@@ -45,15 +45,16 @@ export class HistoryComponent implements OnInit, OnDestroy{
                         value: charArr.reduce((total, char) => {total += char.amount; return total},0)
                      })
                 })
-        })
+        })        
     }
 
     private toggleFilterVisibility(dir: boolean): void {
         this.isFilterVisible = dir;
     }
 
-    public onRefresh() {
+    public onClick() {
         this.toggleFilterVisibility(true);
+        this.displayBlock = true;
     }
 
     onFilterCancel() {

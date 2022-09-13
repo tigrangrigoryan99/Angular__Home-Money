@@ -23,10 +23,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="name" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите название</label><br>
+                    <label for="name1" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите название</label><br>
                     <input type="text" 
                         autocomplete="off"
-                        id="name"
+                        id="name1"
                         class="form-control border-style"
                         [ngModel]="currentCategori.name"
                         #name="ngModel"
@@ -35,10 +35,10 @@
                     <span *ngIf="name.invalid && name.touched" style="color: red; font-size: 11px;">Название категории не может быть пустым!</span>
                 </div>
                 <div class="form-group">
-                    <label for="capacity" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите лимит</label><br>
+                    <label for="amount" style="font-weight: bold; color: rgb(49, 48, 48);">Выведите лимит</label><br>
                     <input type="number" 
                         autocomplete="off"
-                        id="capacity" 
+                        id="amount" 
                         [min]="1"
                         placeholder="0"
                         class="form-control border-style"

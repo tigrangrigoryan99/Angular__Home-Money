@@ -4,10 +4,6 @@
     left: 15%;
     z-index: 50;
     width: 600px;
-    /* display: none; */
-}
-.section .in {
-    display: block;
 }
 .section__modal {
     border: 2px black solid;

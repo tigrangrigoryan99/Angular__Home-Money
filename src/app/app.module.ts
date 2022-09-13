@@ -27,7 +27,10 @@ import { SystemModule } from './system/system.module';
     SystemRoutingModule,
     BrowserAnimationsModule,
   ],
-  providers: [UsersService, AuthService],
+  providers: [ 
+    UsersService, 
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
