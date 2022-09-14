@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { combineLatest, delay, Subscription } from "rxjs";
+import * as moment from "moment";
 
 import { Categories } from "../shared/models/categories.model";
 import { EventModel } from "../shared/models/event.model";
@@ -19,7 +20,7 @@ export class HistoryComponent implements OnInit, OnDestroy{
     public isLoaded: boolean = false;
     public charData: Array<{name: string, value: number}> = [];
     public isFilterVisible: boolean = false;
-    public displayBlock: boolean = false;
+    public filteredEvenets: EventModel[] = [];
 
     constructor( private categoriesService: CategoriesService,
                  private eventsService: EventService) {
@@ -30,39 +31,63 @@ export class HistoryComponent implements OnInit, OnDestroy{
         this.sub1 = combineLatest(this.eventsService.getEvents(), this.categoriesService.getCategories())
             .pipe(delay(500))
             .subscribe((data: any) => {
-                this.isLoaded = true;
-                
+                                
                 this.dataEvents = data[0];    
-                this.dataCategories = data[1];     
+                this.dataCategories = data[1]; 
+                
+                this.setOriginalEvents();
+                this.calculateCharDate();
 
-                this.dataCategories.forEach((c) => {
-                    const charArr = this.dataEvents.filter((e) => {
-                        return e.category === c.id && e.type === 'outcome'
-                     })
-
-                     this.charData.push({
-                        name: c.name,
-                        value: charArr.reduce((total, char) => {total += char.amount; return total},0)
-                     })
-                })
+                this.isLoaded = true;               
         })        
+    }
+
+    private calculateCharDate(): void {
+        this.dataCategories.forEach((c) => {
+            const charArr = this.filteredEvenets.filter((e) => {
+                return e.category === c.id && e.type === 'outcome'
+             })
+
+             this.charData.push({
+                name: c.name,
+                value: charArr.reduce((total, char) => {total += char.amount; return total},0)
+             })
+        });
     }
 
     private toggleFilterVisibility(dir: boolean): void {
         this.isFilterVisible = dir;
     }
 
-    public onClick() {
+    public openFilter() {
         this.toggleFilterVisibility(true);
-        this.displayBlock = true;
+    }
+
+    private setOriginalEvents(): void {
+        this.filteredEvenets = this.dataEvents.slice();        
     }
 
     onFilterCancel() {
         this.toggleFilterVisibility(false);
+        this.setOriginalEvents();
+        this.calculateCharDate();
     }
 
-    onFilterApply(filterData: {types: [],categories: Categories[], period: string}) {
-        console.log(filterData);  
+    onFilterApply(filterData: any) {
+        this.setOriginalEvents();
+        this.toggleFilterVisibility(false);
+
+        const startPeriod = moment().startOf(filterData.period).startOf('d');
+        const endPeriod = moment().endOf(filterData.period).endOf('d'); 
+
+        this.filteredEvenets = this.filteredEvenets.filter((e) => {
+            return filterData.types.indexOf(e.type) !== -1;               
+        }).filter((e) => {
+            return filterData.categories.indexOf(e.category.toString()) !== -1;                                   
+         }) .filter((e) => {
+            return moment(e.date, 'DD.MM.YYYY HH:mm:ss').isBetween(startPeriod, endPeriod);
+        });    
+        this.calculateCharDate();
     }
 
     ngOnDestroy(): void {

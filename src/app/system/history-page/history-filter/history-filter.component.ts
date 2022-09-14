@@ -31,10 +31,6 @@ export class HIstoryFilterComponent {
         
     }
 
-    closeFilter() {
-        this.onCancel.emit();
-    }
-
     private calculateInputParams(arr: any, checked: boolean, value: string): void {
         if(checked) {
             arr.indexOf(value) === -1 ? arr.push(value) : null;               
@@ -59,6 +55,10 @@ export class HIstoryFilterComponent {
             categories: this.selectedCtegories,
             period: this.selectedPeriod,
         });
+    }
+
+    onFilterCancel() {
+        this.onCancel.emit();
     }
     
 }

@@ -2,7 +2,7 @@
     <div class="history__block">
         <h3 class="history__title title">Страница счёта</h3>
         <div class="pull-right">
-            <button type="button" class="filter-buton" (click)="onClick()">
+            <button type="button" class="filter-buton" (click)="openFilter()">
                 <img src="../../../assets/img/filter.png" alt="filter" width="25px" height="25px">
             </button>
         </div>
@@ -12,8 +12,13 @@
     </div>
     <ng-template #history>
         <div class="history__pages">
-            <wfm-historychart [data]="charData"></wfm-historychart>
-            <wfm-historyevents [dataEvt]="dataEvents" [dataCat]="dataCategories"></wfm-historyevents>
+            <wfm-historychart 
+                [data]="charData">
+            </wfm-historychart>
+            <wfm-historyevents 
+                [dataEvt]="filteredEvenets" 
+                [dataCat]="dataCategories">
+            </wfm-historyevents>
             <div *ngIf="isFilterVisible">
                 <wfm-historyfilter
                     (onFilterCancel)="onFilterCancel()"

@@ -3,7 +3,7 @@
         <div class="modal-item">
             <div class="modal-item__header">
                 <h4 class="title">Фильтр</h4>
-                <div class="close" (click)="closeFilter()">x</div>
+                <div class="close" (click)="onFilterCancel()">x</div>
             </div>
             <div class="modal-item__form">
                 <form class="form">
@@ -42,8 +42,8 @@
                     </div>
                     <div class="form-group top-border">
                         <div class="btn-group">
-                            <button type="reset" class="btn-reset" (click)="closeFilter()">Отмена</button>
-                            <button type="submit" class="btn-submit" (click)="onFilterApply()">Применить</button>
+                            <button type="button" class="btn-reset" (click)="onFilterCancel()">Отмена</button>
+                            <button type="button" class="btn-submit" (click)="onFilterApply()">Применить</button>
                         </div>
                     </div>
                 </form>
