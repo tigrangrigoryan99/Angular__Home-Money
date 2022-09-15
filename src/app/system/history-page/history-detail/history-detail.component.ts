@@ -1,6 +1,7 @@
+import { Location } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
-import { combineLatest, delay, mergeMap, Subscription } from "rxjs";
+import { delay, mergeMap, Subscription } from "rxjs";
 
 import { Categories } from "../../shared/models/categories.model";
 import { EventModel } from "../../shared/models/event.model";
@@ -24,7 +25,8 @@ export class HistoryDetailComponent implements OnInit, OnDestroy{
 
     constructor(private route: ActivatedRoute, 
                 private eventsService: EventService,
-                private categoriesService: CategoriesService) {
+                private categoriesService: CategoriesService,
+                private location: Location) {
     }
 
     ngOnInit(): void {
@@ -45,6 +47,10 @@ export class HistoryDetailComponent implements OnInit, OnDestroy{
 
     public changeSrc(mouseMov: boolean): void {   
         mouseMov ? this.srcImg = "../../../../assets/img/hoverarrowleft.png" : this.srcImg = "../../../../assets/img/arrowleft.png";        
+    }
+
+    goBack(): void {
+        this.location.back();
     }
 
     ngOnDestroy(): void {

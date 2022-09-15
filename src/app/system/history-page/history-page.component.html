@@ -7,8 +7,8 @@
             </button>
         </div>
     </div> 
-    <div class="loaded" *ngIf="!isLoaded; else history">
-        Loadding...
+    <div *ngIf="!isLoaded; else history">
+        <wfm-loading></wfm-loading>
     </div>
     <ng-template #history>
         <div class="history__pages">

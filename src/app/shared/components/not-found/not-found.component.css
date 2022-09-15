@@ -1,0 +1,19 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.context-notfound {
+    text-align: center;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    width: 600px;
+    height: 300px;
+}
+.title {
+    color: red;
+    font-size: 40px;
+}

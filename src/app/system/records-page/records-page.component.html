@@ -3,8 +3,8 @@
         <h3 class="title">Страница записей</h3>
     </div> 
     <div class="section">
-        <div class="loaded" *ngIf="!isLoadded; else row">
-            Loadding...
+        <div *ngIf="!isLoadded; else row">
+            <wfm-loading></wfm-loading>
         </div>
         <ng-template #row>
             <div class="row">

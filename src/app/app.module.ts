@@ -10,11 +10,12 @@ import { SharedModule } from './shared/shared.module';
 import { UsersService } from './shared/services/users.service';
 import { AuthService } from './shared/services/auth.service';
 import { SystemRoutingModule } from './system/system-routing.module';
-// import { SystemModule } from './system/system.module';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,9 +24,8 @@ import { SystemRoutingModule } from './system/system-routing.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    // SystemModule,
     SystemRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [ 
     UsersService, 
@@ -33,4 +33,7 @@ import { SystemRoutingModule } from './system/system-routing.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+  
+ }

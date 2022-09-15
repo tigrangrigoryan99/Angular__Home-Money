@@ -1,10 +1,14 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { LoadingComponent } from "./components/loading/loading.component";
 
 @NgModule({
-    declarations: [],
-    imports: [ReactiveFormsModule, FormsModule],
-    exports: [ReactiveFormsModule, FormsModule],
+    declarations: [ LoadingComponent ],
+    imports: [ ReactiveFormsModule, 
+        FormsModule ],
+    exports: [ ReactiveFormsModule, 
+        FormsModule, 
+        LoadingComponent ],
     providers: []
 })
 

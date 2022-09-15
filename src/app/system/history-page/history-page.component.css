@@ -42,14 +42,6 @@
 ::-webkit-scrollbar-track-piece {
     /* border: 2px gray solid; */
 }
-.loaded {
-    text-align: center;
-    color: rgb(196, 190, 190);
-    font-size: 28px;
-    font-weight: 400px;
-    margin-top: 40px;
-
-}
 .pull-right {
 
 }

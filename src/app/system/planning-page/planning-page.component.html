@@ -2,8 +2,8 @@
     <div class="planning__header">
         <h3 class="planning__title title">Страница планирования</h3>
     </div> 
-    <div class="loaded" *ngIf="!isLoaded; else section">
-        Loadding...
+    <div *ngIf="!isLoaded; else section">
+        <wfm-loading></wfm-loading>
     </div>
     <ng-template #section>     
     <div class="plannine__section">

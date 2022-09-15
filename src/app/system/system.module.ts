@@ -47,6 +47,7 @@ import { AuthGuard } from "../shared/services/auth.guard";
         HistoryDetailComponent,
         HistoryEvenetsComponent,
         HIstoryFilterComponent,
+        
 
         /* Directives */
         DropdownDirective,
@@ -62,7 +63,7 @@ import { AuthGuard } from "../shared/services/auth.guard";
         NgxChartsModule
     ],
     exports: [
-        
+        SharedModule
     ],
     providers: [
         BillService, 

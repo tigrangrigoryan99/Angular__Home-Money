@@ -1,8 +1,10 @@
 <article class="article">
     <div class="header__block">
-         <a [routerLink]="['/system/history']" style="padding: 5px 10px 0 0 ;">
-            <img [src]="srcImg" alt="arrowleft" width="25px" height="25px" (mouseenter)="changeSrc(true)" (mouseleave)="changeSrc(false)">
-         </a>
+         <!-- <a [routerLink]="['/system/history']" style="padding: 5px 10px 0 0 ;"> -->
+            <button type="button" (click)="goBack()" style="padding: 5px 10px 0 0 ; margin: 0;border: none;background-color: white;">
+                <img [src]="srcImg" alt="arrowleft" width="25px" height="25px" (mouseenter)="changeSrc(true)" (mouseleave)="changeSrc(false)">
+            </button>
+         <!-- </a> -->
             <h3 class="header__title">Страница записи N {{dataEvents.id}}</h3>
     </div>
     <section class="section">  
