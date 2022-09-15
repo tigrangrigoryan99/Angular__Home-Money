@@ -10,13 +10,12 @@ import { RecordsComponent } from "./records-page/records-page.component";
 import { SystemComponent } from "./system.component";
 
 const systemRoutes: Routes = [
-    {path: "", component: SystemComponent, canActivate: [AuthGuard],children: [
+    {path: "", component: SystemComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard], children: [
         {path: "bill", component: BillComponent},
         {path: "history", component: HistoryComponent},
         {path: "planning", component: PlanningComponent},
         {path: "records", component: RecordsComponent},
-        {path: "history/:id", component: HistoryDetailComponent},
-        {path: "", redirectTo: "bill", pathMatch: "full"}
+        {path: "history/:id", component: HistoryDetailComponent}
     ]}
 ]
 

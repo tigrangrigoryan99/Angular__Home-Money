@@ -29,7 +29,7 @@ import { SystemRoutingModule } from './system/system-routing.module';
   ],
   providers: [ 
     UsersService, 
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })
