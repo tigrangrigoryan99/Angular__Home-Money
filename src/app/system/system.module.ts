@@ -26,6 +26,7 @@ import { CategoriesService } from "./shared/services/categories.service";
 import { EventService } from "./shared/services/event.service";
 import { SystemRoutingModule } from "./system-routing.module";
 import { SystemComponent } from "./system.component";
+import { AuthGuard } from "../shared/services/auth.guard";
 
 @NgModule({
     declarations: [
@@ -66,7 +67,8 @@ import { SystemComponent } from "./system.component";
     providers: [
         BillService, 
         CategoriesService,
-        EventService
+        EventService,
+        AuthGuard
     ]
 })
 export class SystemModule {

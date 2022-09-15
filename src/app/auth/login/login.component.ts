@@ -14,9 +14,10 @@ import { UsersService } from "src/app/shared/services/users.service";
 
 export class LoginComponent implements OnInit {
 
-    form!: FormGroup ;
-    newMessage: boolean = false;
-    succesMassage: boolean = false;
+    public form!: FormGroup ;
+    public newMessage: boolean = false;
+    public succesMassage: boolean = false;
+    public accessDenied: boolean = false;
 
     constructor( private userServics: UsersService, 
                  private authService: AuthService, 
@@ -29,7 +30,12 @@ export class LoginComponent implements OnInit {
                 this.succesMassage = true;
                 setTimeout(() => {
                     this.succesMassage = false;
-                }, 5000)
+                }, 5000);
+            } else if(params['accessDenied']) {
+                this.accessDenied = true;
+                setTimeout(() => {
+                    this.accessDenied = false;
+                }, 5000);
             }
         })
 
@@ -39,7 +45,7 @@ export class LoginComponent implements OnInit {
         })        
     }
 
-   onSubmit(): void {
+    public onSubmit(): void {
         const formData = this.form.value;
  
         this.userServics.getUserByEmail(formData.email)

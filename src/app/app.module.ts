@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { UsersService } from './shared/services/users.service';
 import { AuthService } from './shared/services/auth.service';
 import { SystemRoutingModule } from './system/system-routing.module';
-import { SystemModule } from './system/system.module';
+// import { SystemModule } from './system/system.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { SystemModule } from './system/system.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    SystemModule,
+    // SystemModule,
     SystemRoutingModule,
     BrowserAnimationsModule,
   ],

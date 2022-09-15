@@ -83,3 +83,12 @@ a:active {
     text-align: center;
     font-weight: bold;  
 }
+.denied {
+    border-radius: 5px;
+    background-color: rgb(236, 214, 17);
+    color: white;
+    padding: 15px;
+    margin: 40px;
+    text-align: center;
+    font-weight: bold;  
+}
