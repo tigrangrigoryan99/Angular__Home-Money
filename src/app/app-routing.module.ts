@@ -6,7 +6,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 
 const appRouter: Routes = [
   {path: 'system', loadChildren: () => import("./system/system.module").then((module) => module.SystemModule)},
-  {path: '', loadChildren: () => import("./auth/auth.module").then((module) => module.AuthModule)},
+  {path: 'auth', loadChildren: () => import("./auth/auth.module").then((module) => module.AuthModule)},
   {path: '**', component: NotFoundComponent},
 ]
 

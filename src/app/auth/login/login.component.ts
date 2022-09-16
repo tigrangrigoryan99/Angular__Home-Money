@@ -6,6 +6,7 @@ import { User } from "src/app/shared/models/user.model";
 import { AuthService } from "src/app/shared/services/auth.service";
 import { UsersService } from "src/app/shared/services/users.service";
 import { faidStateTrigger } from "src/app/shared/animation/fade.animation";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
     selector: "wfm-login",
@@ -24,7 +25,16 @@ export class LoginComponent implements OnInit {
     constructor( private userServics: UsersService, 
                  private authService: AuthService, 
                  private router: Router,
-                 private route: ActivatedRoute) {}
+                 private route: ActivatedRoute,
+                 private title: Title,
+                 private meta: Meta) {
+
+        title.setTitle('Login page');
+        meta.addTags([
+            {name: 'keywords', content: 'login, system, auth'},
+            {name: 'author', content: 'Tigran Grigoryan'}
+        ])
+    }
 
     ngOnInit(): void {
         this.route.queryParams.subscribe((params: Params) => {
