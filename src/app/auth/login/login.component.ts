@@ -5,11 +5,13 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { User } from "src/app/shared/models/user.model";
 import { AuthService } from "src/app/shared/services/auth.service";
 import { UsersService } from "src/app/shared/services/users.service";
+import { faidStateTrigger } from "src/app/shared/animation/fade.animation";
 
 @Component({
     selector: "wfm-login",
     templateUrl: "login.component.html",
-    styleUrls: ["login.component.css"]
+    styleUrls: ["login.component.css"],
+    animations: [faidStateTrigger]
 })
 
 export class LoginComponent implements OnInit {
