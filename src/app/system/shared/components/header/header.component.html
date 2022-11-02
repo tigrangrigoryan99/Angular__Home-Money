@@ -1,28 +1,46 @@
 <header class="header">
-    <div class="header-container">
-        <div class="header-block header-block-search">
-            {{ date | moment: "yyyy.mm.dd"}}
-        </div>
-        <div class="header-block header-block-nav">
-            <ul class="nav-profil">
-                <li class="profil dropdown" dropdown>
-                    <a>
-                        <span class="name">Здравствуйте, {{userName}} </span>
-                        <img src="../../../../../assets/img/download.jpg" alt="birdie" width="15px" height="15px" style="margin-left: 7px;">
-                    </a>
-                    <div class="dropdown-menu">
-                        <a [routerLink]="['/system','records']">
-                            <img src="../../../../../assets/img/add.png" alt="add" width="15px" height="15px" style="margin-right: 7px;">
-                            Сделать запись
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a (click)="onLogOut()">
-                            <img src="../../../../../assets/img/out.png" alt="out" width="15px" height="15px" style="margin-right: 7px;">
-                            Выйти
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+  <div class="header-container">
+    <div class="header-block header-block-search">
+      {{ date | moment: "yyyy.mm.dd" }}
     </div>
+    <div class="header-block header-block-nav">
+      <ul class="nav-profil">
+        <li class="profil dropdown" dropdown>
+          <a>
+            <span class="name">Здравствуйте, {{ userName }} </span>
+            <img
+              src="../../../../../assets/img/download.jpg"
+              alt="birdie"
+              width="15px"
+              height="15px"
+              style="margin-left: 7px"
+            />
+          </a>
+          <div class="dropdown-menu">
+            <a [routerLink]="['/system', 'records']">
+              <img
+                src="../../../../../assets/img/add.png"
+                alt="add"
+                width="15px"
+                height="15px"
+                style="margin-right: 7px"
+              />
+              Сделать запись
+            </a>
+            <div class="dropdown-divider"></div>
+            <a (click)="onLogOut()">
+              <img
+                src="../../../../../assets/img/out.png"
+                alt="out"
+                width="15px"
+                height="15px"
+                style="margin-right: 7px"
+              />
+              Выйти
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
